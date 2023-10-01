@@ -5,21 +5,95 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="shortcut icon" href="logo.png" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+
+			.topnav .icon {
+  				display: none;
+			}
+
+
+
+			#teamButton {
+				background-image:url("../pceea/images/groupFotoPC-2023.jpg");
+				background-size: cover;
+				width:50vw;
+				height: 36vw;
+				border-radius: 1em;
+				font-family: "Source Sans Pro", "sans-serif";
+				font-weight: 300;
+				font-size: 18pt;
+				filter:brightness(65%);
+			}
+			#teamButton:hover {
+				filter:brightness(90%);
+			}
+			#tbd {
+				float:left;
+
+			}
+			#st {
+
+				text-align: center;
+				height:auto;
+				margin-bottom: 31%;
+			}
+
+			@media screen and (max-width: 600px) {
+			.topnav .selel {
+				display: none;
+			}
+			.topnav a.icon {
+				float: right;
+				display: none;
+			}
+			}
+
+			@media screen and (max-width: 600px) {
+			.topnav.responsive {position: relative;}
+			.topnav.responsive .icon {
+				position: absolute;
+				right: 0;
+				top: 0;
+			}
+			.topnav.responsive a {
+				float: none;
+				display: block;
+				text-align: left;
+			}
+			}
+			@media only screen and (max-width: 600px) {
+		
+				#tbd {
+					float:center;
+				}
+				#teamButton {
+					width:100vw;
+					height: 72vw;
+					object-fit: cover;
+					border-radius:0em;
+				}
+			}
+
+		</style>
 	</head>
 	<body>
 
 
-			<header id="header">
+			<header class="" id="header">
 				<a href="#"><img src="logo.png" width="80" height="79"></img></a>
 				<nav>
-					<ul>
-						<li><a href="#">Home</a></li>
-						<li><a href="Pages/members.html">Members</a></li>
-						<li><a href="Pages/minutes.html">Minutes</a></li>
-						<li><a href="Pages/clubs.html">Clubs</a></li>	
-						<a href="https://pupilscommittee.herokuapp.com/"><li><li><button type="button" class="btn btn-warning">Merch</button></a></li></li>
+					<ul class="topnav" id="myTopnav">
+						<li><a href="#" class="selel">Home</a></li>
+						<li><a href="Pages/members.html" class="selel">Members</a></li>
+						<li><a href="Pages/minutes.html" class="selel">Minutes</a></li>
+						<li><a href="Pages/clubs.html" class="selel">Clubs</a></li>	
+						</li></li>
+						<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+							<i class="fa fa-bars"></i>
+						  </a>
 					</ul>
 				</nav>
 			</header>
@@ -37,17 +111,40 @@
 					 </footer>
 				</div>
 			</section>
+			<br>
+			<br>
+			<section id="team">
+		<div>
+			<div>
+				<div id="tbd" >
+					<a href="Pages/members.html"><img src="/images/groupFotoPC-2023.jpg" id="teamButton"></a>
 
+				</div>
+				<div id="st">
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<h3>Suggestions</h3>
+					<p>Want to give us suggestions or ask a question?</p>
+					<a href="mailto:ALI-PUPILS-COMMITTEE@student.eursc.eu"><button>Get in Contact</button></a>
+				</div>
+			</div>
+		</div>
+			</section>
 			<section id="about">
 				<div>
-					<header>
+					
 						<h2>About</h2>
 						<p>In accordance with the Convention of 1994 defining the Statute of the European Schools and
 							the General Rules of the European Schools, the Pupils' Committee (PC) represents the best
 							interests of all the pupils of its school. It is a non-profit organisation, democratically elected,
 							independent, and recognised by the school community and the different official bodies of the
-							European Schools.</p>
-					</header>
+							European Schools. 			</p>
+					
 				</div>
 			</section>
 		<!-- 	<section id="contact" class="main style3 secondary">
@@ -72,7 +169,7 @@
 			</section> -->
 
 
-			<footer id="footer">
+			<footer id="footer" >
 
 
 					<ul class="icons">
@@ -96,6 +193,15 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
+			<script>
+				function myFunction() {
+				  var x = document.getElementById("myTopnav");
+				  if (x.className === "topnav") {
+					x.className += " responsive";
+				  } else {
+					x.className = "topnav";
+				  }
+				}
+				</script>
 	</body>
 </html>

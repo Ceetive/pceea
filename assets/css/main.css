@@ -647,7 +647,7 @@ input, select, textarea {
 
 		}
 
-/* Button */
+/* Button  */
 		.button-s {
 			background-color: #98c593;
 			border: 0;
@@ -1116,7 +1116,7 @@ input, select, textarea {
 			ul.actions.fit.stacked {
 				width: 100%;
 			}
-
+		/*
 		@media screen and (max-width: 480px) {
 
 			ul.actions:not(.fixed) {
@@ -1167,7 +1167,7 @@ input, select, textarea {
 						}
 
 		}
-
+*/
 /* Icons */
 
 	ul.icons {
@@ -1907,10 +1907,11 @@ input, select, textarea {
 					#header h1 a {
 						font-size: 1em;
 					}
-
+				/*
 				#header nav {
 					display: none;
 				}
+				*/
 
 		}
 
@@ -2255,10 +2256,18 @@ input, select, textarea {
 	#intro {
 		background: url("images/overlay.png"), url("../../images/eea.jpg");
 		background-size: 256px 256px, cover;
-		background-attachment: fixed, fixed;
+		/*background-attachment: fixed, fixed; */
 		background-position: top left, bottom center;
 		background-repeat: repeat, no-repeat;
 		background-image: contrast;
+	}
+/* The Team */
+	#teamButton {
+		background-image:url("../../images/groupFotoPC-2023.jpg");
+		background-size: cover;
+		width: 1000px;
+		height: 720px;
+		border-radius: 1em;
 	}
 
 /* One */
