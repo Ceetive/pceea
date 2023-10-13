@@ -422,7 +422,7 @@ input, select, textarea {
 	body {
 		text-decoration: none;
 	}
-
+		/* THIS IS WHAT CAUSED THAT WEIRD FUCKING THING WHEN YOU SCROLLED DOWN!!!! set one display non for the case that it is actually usefull*/
 		body:before {
 			-moz-animation: spinner-show 1.5s 1 0.25s ease forwards, spinner-hide 0.25s ease-in-out forwards !important;
 			-webkit-animation: spinner-show 1.5s 1 0.25s ease forwards, spinner-hide 0.25s ease-in-out forwards !important;
@@ -441,7 +441,7 @@ input, select, textarea {
 			color: #e5e6e7;
 			content: '\f1ce';
 			cursor: default;
-			display: block;
+			display: none;
 			font-size: 2em;
 			height: 2em;
 			left: 50%;
