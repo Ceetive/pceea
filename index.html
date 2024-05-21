@@ -9,147 +9,213 @@
     <link rel="shortcut icon" href="logo.png" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     <style>
-        /* Custom styles for the image button */
-		#teamButton {
-			margin: 0 auto;
-			width: 80%; /* Adjust width as needed */
-			height: auto;
-			border-radius: 0em;
-			font-family: "Source Sans Pro", "sans-serif";
-			font-weight: 300;
-			font-size: 18pt;
-			filter: brightness(65%);
-		}
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #footer {
+            position: relative;
+            width: 100%;
+        }
+        header {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            background: white;
+            position: relative;
+        }
+        header img {
+            position: absolute;
+            left: 20px;
+            top: 10px;
+        }
+        .topnav .icon {
+            display: none;
+        }
 
+        .suggestions-container, .image-container {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 5%;
+        }
+        #teamButton {
+            width: 100%;
+
+            height: auto;
+            border-radius: 0em;
+            filter: brightness(90%);
+        }
         #teamButton:hover {
-            filter: brightness(72%);
+            filter: brightness(80%);
         }
-        #tbd {
-            text-align: center; /* Center the image */
-            margin-top: 2rem; /* Adjust spacing */
-        }
-		#st {
-			text-align: center;
-			margin-bottom: 2rem; /* Adjust the margin-bottom value as needed */
-		}
-
-		@media only screen and (max-width: 600px) {
-				/* Adjust the image button for smaller screens */
-			#teamButton {
-				width: 100%; /* Adjust width as needed */
-				max-width: none; /* Remove the maximum width limit */
-				}
-					}
-            /* Adjusting topnav for responsive view */
-            .topnav .icon {
+        @media screen and (max-width: 600px) {
+            header img {
                 display: none;
             }
-            .topnav.responsive {position: relative;}
-            .topnav.responsive .icon {
-                position: absolute;
-                right: 0;
-                top: 0;
+            .topnav .selel {
+                display: none;
             }
-            .topnav.responsive a {
-                float: none;
+            .topnav a.icon {
+                float: right;
                 display: block;
-                text-align: left;
+                font-size: 25px;
             }
-            /* Adjusting teamButton for smaller screens */
-            #teamButton {
-                width: 100vw;
-                height: 72vw;
-                object-fit: cover;
-                border-radius: 0em;
+			#about {
+				margin-left: 2%;
+				margin-right: 2%;
+				margin-top: 5%;
+				margin-bottom: 15%;
+			}
+			#about h2 {
+				text-align: center;
+				font-size: 27px;
+			}
+			.suggestions-container {
+				margin-bottom: 10%;
+			}
+        }
+        .slide-menu {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            right: 0;
+            background-color: rgb(255, 255, 255);
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+        .slide-menu a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 20px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+        .slide-menu a:hover {
+            color: #f1f1f1;
+        }
+        .slide-menu .close {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+            display: none;
+        }
+        #mobile {
+            display: none;
+        }
+        .icon {
+            position: absolute;
+            top: -35%;
+            right: 0px;
+            font-size: 25px;
+        }
+        @media screen and (max-width: 830px) {
+            #normal {
+                display: none;
             }
-        
+            #mobile {
+                display: flex;
+                align-items: center;
+            }
+        }
     </style>
 </head>
 <body>
-    <header class="" id="header">
-        <a href="#"><img src="logo.png" width="80" height="79"></img></a>
-        <nav>
-            <ul class="topnav" id="myTopnav">
-                <li><a href="#" class="selel">Home</a></li>
-                <li><a href="Pages/members.html" class="selel">Members</a></li>
-                <li><a href="Pages/documents.html" class="selel">Documents</a></li>
-                <li><a href="Pages/clubs.html" class="selel">Clubs</a></li>
-                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                    <i class="fa fa-bars"></i>
-                </a>
-            </ul>
-        </nav>
-    </header>
-
-    <section id="intro" class="main style1 dark fullscreen">
-        <div class="content">
-            <header>
-                <h2>Pupils' Committee</h2>
-            </header>
-            <h4>European School of Alicante</h4><br />
-            <p>Stay up to date with all our information and development. </p>
-            <footer>
-                <a href="mailto:ALI-PUPILS-COMMITTEE@student.eursc.eu"><button type="button" class="btn btn-danger">Contact</button></a>
-            </footer>
-        </div>
-    </section>
-
-	<br>
-	<br>
-	<br>
-    <br>
-    
-    <section id="team">
-        <div>
-            <div>
-                <div id="st">
-                    <h3>Suggestions</h3>
-                    <p>Want to give us suggestions or ask a question?</p>
-                    <a href="mailto:ALI-PUPILS-COMMITTEE@student.eursc.eu"><button>Get in Contact</button></a>
-                </div>
-                <div id="tbd">
-					<br>
-					<br>
-                    <a href="Pages/members.html"><img src="/images/groupFotoPC-2023.jpg" id="teamButton"></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="about">
-        <div>
-            <h2>About</h2>
-            <p>In accordance with the Convention of 1994 defining the Statute of the European Schools and the General Rules of the European Schools, the Pupils' Committee (PC) represents the best interests of all the pupils of its school. It is a non-profit organisation, democratically elected, independent, and recognised by the school community and the different official bodies of the European Schools. </p>
-        </div>
-    </section>
-
-    <footer id="footer">
-        <ul class="icons">
-            <li><a href="https://www.instagram.com/pceealicante/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-            <li><p>ALI-PUPILS-COMMITTEE@student.eursc.eu</p></li>
+<header id="header">
+    <a href="#"><img src="logo.png" width="80" height="79"></a>
+    <nav id="normal">
+        <ul class="topnav" id="myTopnav">
+            <li><a href="#" class="selel">Home</a></li>
+            <li><a href="Pages/members.html" class="selel">Members</a></li>
+            <li><a href="Pages/documents.html" class="selel">Documents</a></li>
+            <li><a href="Pages/clubs.html" class="selel">Clubs</a></li>
         </ul>
-        <ul class="menu">
-            <li>&copy; EEA PC</li><li>Design: IT Manager</li>
+    </nav>
+    <nav id="mobile">
+        <ul class="topnav" id="myTopnav">
+            <li><a href="javascript:void(0);" class="icon" id="ham" onclick="openSlideMenu()"><i class="fa fa-bars"></i></a></li>
+            <li><a href="javascript:void(0)" class="close" id="closer" onclick="closeSlideMenu()">&times;</a></li>
         </ul>
-    </footer>
+    </nav>
+</header>
+<div class="slide-menu" id="slideMenu">
+    <a href="javascript:void(0)" class="close" id="closer" onclick="closeSlideMenu()">&times;</a>
+    <a href="#">Home</a>
+    <a href="Pages/members.html">Members</a>
+    <a href="Pages/documents.html">Documents</a>
+    <a href="Pages/clubs.html">Clubs</a>
+</div>
 
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.poptrox.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script>
-        function myFunction() {
-            var x = document.getElementById("myTopnav");
-            if (x.className === "topnav") {
-                x.className += " responsive";
-            } else {
-                x.className = "topnav";
-            }
-        }
-    </script>
+<section id="intro" class="main style1 dark fullscreen">
+    <div class="content">
+        <h2>Pupils' Committee</h2>
+        <h4>European School of Alicante</h4><br />
+        <p>Stay up to date with all our information and development.</p>
+        <footer>
+            <a href="mailto:ALI-PUPILS-COMMITTEE@student.eursc.eu"><button type="button" class="btn btn-danger">Contact</button></a>
+        </footer>
+    </div>
+</section>
+
+<section id="about">
+    <div class="content-container">
+        <h2>About</h2>
+        <p>In accordance with the Convention of 1994 defining the Statute of the European Schools and the General Rules of the European Schools, the Pupils' Committee (PC) represents the best interests of all the pupils of its school. It is a non-profit organisation, democratically elected, independent, and recognised by the school community and the different official bodies of the European Schools.</p>
+    </div>
+</section>
+
+<section id="suggestions" class="content-container">
+    <div class="suggestions-container">
+        <h3>Suggestions</h3>
+        <p>Want to give us suggestions or ask a question?</p>
+        <a href="mailto:ALI-PUPILS-COMMITTEE@student.eursc.eu"><button>Get in Contact</button></a>
+    </div>
+</section>
+
+
+
+<footer id="footer">
+    <ul class="icons">
+        <li><a href="https://www.instagram.com/pceealicante/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+        <li><p>ALI-PUPILS-COMMITTEE@student.eursc.eu</p></li>
+    </ul>
+    <ul class="menu">
+        <li>&copy; EEA PC</li><li>Design: IT Manager</li>
+    </ul>
+</footer>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.poptrox.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+    function openSlideMenu() {
+        document.getElementById('slideMenu').style.width = '250px';
+        document.getElementById('ham').style.display = 'none';
+        document.getElementById('closer').style.display = 'block';
+    }
+
+    function closeSlideMenu() {
+        document.getElementById('slideMenu').style.width = '0';
+        document.getElementById('ham').style.display = 'block';
+        document.getElementById('closer').style.display = 'none';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('closer').style.display = 'none';
+    });
+</script>
 </body>
 </html>

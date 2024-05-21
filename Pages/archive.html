@@ -82,3 +82,156 @@ header for old members page
   members weird ahh style
 
   col-lg-3 col-md-6 d-flex align-items-stretch
+
+
+  <section id="team" class="content-container">
+    <div class="image-container">
+        <a href="Pages/members.html"><img src="/images/groupFotoPC-2023.jpg" id="teamButton"></a>
+    </div>
+</section>
+
+
+Hamburger <header>
+
+    <header id="header">
+        <a href="#"><img src="logo.png" width="80" height="79"></a>
+        <nav id="normal">
+            <ul class="topnav" id="myTopnav">
+                <li><a href="#" class="selel">Home</a></li>
+                <li><a href="Pages/members.html" class="selel">Members</a></li>
+                <li><a href="Pages/documents.html" class="selel">Documents</a></li>
+                <li><a href="Pages/clubs.html" class="selel">Clubs</a></li>
+            </ul>
+        </nav>
+        <nav id="mobile">
+            <ul class="topnav" id="myTopnav">
+                <li><a href="javascript:void(0);" class="icon" id="ham" onclick="openSlideMenu()"><i class="fa fa-bars"></i></a></li>
+                <li><a href="javascript:void(0)" class="close" id="closer" onclick="closeSlideMenu()">&times;</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="slide-menu" id="slideMenu">
+        <a href="javascript:void(0)" class="close" id="closer" onclick="closeSlideMenu()">&times;</a>
+        <a href="#">Home</a>
+        <a href="Pages/members.html">Members</a>
+        <a href="Pages/documents.html">Documents</a>
+        <a href="Pages/clubs.html">Clubs</a>
+    </div>
+
+Css:
+header img {
+    position: absolute;
+    left: 20px;
+    top: 10px;
+}
+.topnav .icon {
+    display: none;
+}
+@media screen and (max-width: 830px) {
+    #normal {
+        display: none;
+    }
+    #mobile {
+        display: flex;
+        align-items: center;
+    }
+}
+.slide-menu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    background-color: rgb(255, 255, 255);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+.slide-menu a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+.slide-menu a:hover {
+    color: #f1f1f1;
+}
+.slide-menu .close {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    display: none;
+}
+#mobile {
+    display: none;
+}
+.icon {
+    position: absolute;
+    top: -35%;
+    right: 0px;
+    font-size: 25px;
+}
+
+@media screen and (max-width: 600px) {
+    header img {
+        display: none;
+    }
+    .topnav .selel {
+        display: none;
+    }
+    .topnav a.icon {
+        float: right;
+        display: block;
+        font-size: 25px;
+    }
+
+    header {
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        background: white;
+        position: relative;
+    }
+    header img {
+        position: absolute;
+        left: 20px;
+        top: 10px;
+    }
+    .topnav .icon {
+        display: none;
+    }
+script
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.poptrox.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+    function openSlideMenu() {
+        document.getElementById('slideMenu').style.width = '250px';
+        document.getElementById('ham').style.display = 'none';
+        document.getElementById('closer').style.display = 'block';
+    }
+
+    function closeSlideMenu() {
+        document.getElementById('slideMenu').style.width = '0';
+        document.getElementById('ham').style.display = 'block';
+        document.getElementById('closer').style.display = 'none';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('closer').style.display = 'none';
+    });
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">

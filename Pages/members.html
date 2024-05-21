@@ -13,39 +13,133 @@
   <link href="../logo.png" rel="icon">
   <link href="../logo.png" rel="apple-touch-icon">
 
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet"> 
   <link href="../assets/css/main.css" rel="stylesheet">
-
   <style>
-    /* Additional CSS for mobile view */
-    @media (max-width: 767px) {
-      .member {
-        margin-bottom: 30px;
-      }
+    .slide-menu {
+				height: 100%;
+				width: 0;
+				position: fixed;
+				z-index: 1000;
+				top: 0;
+				right: 0;
+				background-color: rgb(255, 255, 255);
+				overflow-x: hidden;
+				transition: 0.5s;
+				padding-top: 60px;
+			}
+			.slide-menu a {
+				padding: 10px 15px;
+				text-decoration: none;
+				font-size: 20px;
+				color: #818181;
+				display: block;
+				transition: 0.3s;
+			}
+			.slide-menu a:hover {
+				color: #f1f1f1;
+			}
+			.slide-menu .close {
+				position: absolute;
+				top: 0;
+				right: 25px;
+				font-size: 36px;
+				margin-left: 50px;
+				display: none;
+			}
+			#mobile {
+				display: none;
+			}
+			.icon {
+				position: absolute;
+				top: -35%;
+				right: 0px;
+				font-size: 25px;
+			}
+			header img {
+				position: absolute;
+				left: 20px;
+				top: 10px;
+			}
+			.topnav .icon {
+				display: none;
+			}
+			header {
+					height: 80px;
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					padding: 0 20px;
+					background: white;
+					position: relative;
+				}
+				header img {
+					position: absolute;
+					left: 20px;
+					top: 10px;
+				}
+				.topnav .icon {
+					display: none;
+				}
+    @media screen and (max-width: 830px) {
+      #normal {
+        display: none;
     }
-  </style>
+      #mobile {
+        display: flex;
+        align-items: center;
+    }
+    }
 
-  <header id="header">
-    <a href="../index.html"><img src="../logo.png" width="80" height="79"></img></a>
-    <nav>
-      <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="#">Members</a></li>
-        <li><a href="documents.html">Documents</a></li>
-        <li><a href="clubs.html">Clubs</a></li>
-      </ul>
-    </nav>
-  </header>
-</header>
+
+@media screen and (max-width: 600px) {
+    header img {
+        display: none;
+    }
+    .topnav .selel {
+        display: none;
+    }
+    .topnav a.icon {
+        float: right;
+        display: block;
+        font-size: 25px;
+    }}
+
+
+  </style>
 
 </head>
 
 <body>
+  <header id="header">
+    <a href="../index.html"><img src="../logo.png" width="80" height="79" alt=""></a>
+    <nav id="normal">
+      <ul class="topnav" id="myTopnav">
+        <li><a href="../index.html" class="selel">Home</a></li>
+        <li><a href="members.html" class="selel">Members</a></li>
+        <li><a href="documents.html" class="selel">Documents</a></li>
+        <li><a href="clubs.html" class="selel">Clubs</a></li>
+      </ul>
+    </nav>
+    <nav id="mobile">
+      <ul class="topnav" id="myTopnav">
+        <li><a href="javascript:void(0);" class="icon" id="ham" onclick="openSlideMenu()"><i class="fa fa-bars"></i></a></li>
+        <li><a href="javascript:void(0)" class="close" id="closer" onclick="closeSlideMenu()">&times;</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="slide-menu" id="slideMenu">
+    <a href="javascript:void(0)" class="close" id="closer" onclick="closeSlideMenu()">&times;</a>
+    <a href="../index.html">Home</a>
+    <a href="members.html">Members</a>
+    <a href="documents.html">Documents</a>
+    <a href="clubs.html">Clubs</a>
+  </div>
     <section id="team" class="team">
       <div class="container" data-aos="fade-up">
 
@@ -539,18 +633,31 @@
   
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/purecounter/purecounter.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-  <!-- Template Main JS File -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.poptrox.min.js"></script>
+  <script src="assets/js/jquery.scrolly.min.js"></script>
+  <script src="assets/js/jquery.scrollex.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
   <script src="assets/js/main.js"></script>
-
+  <script>
+    function openSlideMenu() {
+      document.getElementById('slideMenu').style.width = '250px';
+      document.getElementById('ham').style.display = 'none';
+      document.getElementById('closer').style.display = 'block';
+    }
   
+    function closeSlideMenu() {
+      document.getElementById('slideMenu').style.width = '0';
+      document.getElementById('ham').style.display = 'block';
+      document.getElementById('closer').style.display = 'none';
+    }
+  
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('closer').style.display = 'none';
+    });
+  </script>
 </body>
 
 </html>

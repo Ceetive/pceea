@@ -6,10 +6,20 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../assets/css/main.css" />
 		<link rel="shortcut icon" href="../logo.png" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		
 		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
 		<style>
 			div {
 				margin-left:100px;
+			}
+			#footer {
+            position: relative;
+            width: 100%;
+        }
+			body{
+				position:relative;
+   				 min-height:100vh;
 			}
 			#statute {
 				margin-right: 100px;
@@ -33,6 +43,81 @@
 			#page-title h2{
 				font-size: 3em;
 			}
+			.slide-menu {
+				height: 100%;
+				width: 0;
+				position: fixed;
+				z-index: 1000;
+				top: 0;
+				right: 0;
+				background-color: rgb(255, 255, 255);
+				overflow-x: hidden;
+				transition: 0.5s;
+				padding-top: 60px;
+			}
+			.slide-menu a {
+				padding: 10px 15px;
+				text-decoration: none;
+				font-size: 20px;
+				color: #818181;
+				display: block;
+				transition: 0.3s;
+			}
+			.slide-menu a:hover {
+				color: #f1f1f1;
+			}
+			.slide-menu .close {
+				position: absolute;
+				top: 0;
+				right: 25px;
+				font-size: 36px;
+				margin-left: 50px;
+				display: none;
+			}
+			#mobile {
+				display: none;
+			}
+			.icon {
+				position: absolute;
+				top: -35%;
+				right: 0px;
+				font-size: 25px;
+			}
+			header img {
+				position: absolute;
+				left: 20px;
+				top: 10px;
+			}
+			.topnav .icon {
+				display: none;
+			}
+			header {
+					height: 80px;
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					padding: 0 20px;
+					background: white;
+					position: relative;
+				}
+				header img {
+					position: absolute;
+					left: 20px;
+					top: 10px;
+				}
+				.topnav .icon {
+					display: none;
+				}
+
+			@media screen and (max-width: 830px) {
+				#normal {
+					display: none;
+				}
+				#mobile {
+					display: flex;
+					align-items: center;
+				}
+			}
 			@media screen and (max-width: 990px){
 				#statute {
 					float:none;
@@ -55,22 +140,50 @@
 			a {
 				text-decoration: none;
 			}
+			
+			@media screen and (max-width: 600px) {
+				header img {
+					display: none;
+				}
+				.topnav .selel {
+					display: none;
+				}
+				.topnav a.icon {
+					float: right;
+					display: block;
+					font-size: 25px;
+				}
+
+
+			}
 		</style>
 		
 	</head>
 	<body>
-			<header id="header">
-				<a href="../index.html"><img src="../logo.png" width="80" height="79"></img></a>
-				<nav>
-					<ul>
-						<li><a href="../index.html">Home</a></li>
-						<li><a href="members.html">Members</a></li>
-						<li><a href="#">Documents</a></li>
-						<li><a href="clubs.html">Clubs</a></li>
-
-					</ul>
-				</nav>
-			</header>
+		<header id="header">
+			<a href="../index.html"><img src="../logo.png" width="80" height="79" alt=""></a>
+			<nav id="normal">
+				<ul class="topnav" id="myTopnav">
+					<li><a href="../index.html" class="selel">Home</a></li>
+					<li><a href="members.html" class="selel">Members</a></li>
+					<li><a href="documents.html" class="selel">Documents</a></li>
+					<li><a href="clubs.html" class="selel">Clubs</a></li>
+				</ul>
+			</nav>
+			<nav id="mobile">
+				<ul class="topnav" id="myTopnav">
+					<li><a href="javascript:void(0);" class="icon" id="ham" onclick="openSlideMenu()"><i class="fa fa-bars"></i></a></li>
+					<li><a href="javascript:void(0)" class="close" id="closer" onclick="closeSlideMenu()">&times;</a></li>
+				</ul>
+			</nav>
+		</header>
+		<div class="slide-menu" id="slideMenu">
+			<a href="javascript:void(0)" class="close" id="closer" onclick="closeSlideMenu()">&times;</a>
+			<a href="../index.html">Home</a>
+			<a href="members.html">Members</a>
+			<a href="documents.html">Documents</a>
+			<a href="clubs.html">Clubs</a>
+		</div>
 
 
 				<div id="page-title">
@@ -82,7 +195,7 @@
 				<div id="statute">
 
 					<h2>Statute</h2>
-					<p>The Statute of the Pupils' Committee of Alicante will be avaible soon.</p>
+					<p style="margin-bottom: 5px;">The Statute of the Pupils' Committee of Alicante<a download href="/Pages/documents/Estatuto Comité de Alumnos 1.pdf"> [ES] ㅤㅤ ㅤㅤㅤㅤ </a></p>
 				</div>
 
 				<div id="club-documents">
@@ -95,14 +208,17 @@
 
 				<div id="statute">
 
-					<h2>Minutes</h2>
-					<h3>2023-2024:</h3>
-					<p>No minutes have been uploaded for this Period.ㅤㅤㅤ ㅤㅤ  ㅤㅤㅤ</p>
+					<h2>Working Groups</h2>
+					<p style="margin-bottom: 5px;">Position on mobile phones in School<a download href="/Pages/documents/PC position mobile phones info.docx"> [EN] ㅤㅤ ㅤㅤㅤㅤ       ㅤㅤㅤㅤ            </a></p>
 					<br>
 					<br>
 					<br>
 					<br>
 					<br>
+					<br>
+					<br>
+
+
 				</div>
 
 				<div id="club-documents">
@@ -111,25 +227,9 @@
 					<h3>2023:</h3>
 					<p style="margin-bottom: 5px;">November 2023<a download href="/Pages/documents/PC-Monthly-November-23.pdf"> [EN] </a></p>
 					<p style="margin-bottom: 5px;">October 2023<a download href="/Pages/documents/PC-Monthly-October-23.pdf"> [EN] </a></p>
-					<p style="margin-bottom: 5px;">April and March 2024<a download href="/Pages/documents/PC-Monthly-report-March,-April-24.pdf"> [EN] </a></p>
 					<p>Mid Term Report 2023-2024<a download href="/Pages/documents/PC Mid-Term Report - 23 - 24.pdf"> [EN] </a></p>
-					<br>
-					<br>
-					<br>
+					<p style="margin-bottom: 5px;">April and March 2024<a download href="/Pages/documents/PC-Monthly-report-March,-April-24.pdf"> [EN] </a></p>
 
-					<h3>2021-2022:</h3>
-					
-					<h1><u>2021-2022 Class representative meetings</u></h1>
-					<p><b></b> Class representative meeting <b>(12/05/2022)</b><a download href="minutes/3CRM2022EN.docx">[EN]</a><a download href="minutes/3CRM2022ES.docx"> [ES]</a></p>
-					<p><b></b> Class representative meeting <b>(18/02/2022)</b><a download href="minutes/2CRM2022EN.docx">[EN]</a><a download href="minutes/2CRM2022ES.docx"> [ES]</a></p>
-					
-					<h1><u>2021-2022 Pupils' Committee Meetings</u></h1>
-					
-					<p><b></b> Pupils' Committee Meeting <b>(11/11/2021)</b><a download href="minutes/3PCM2022EN.docx">[EN]</a><a download href="minutes/3PCM2022ES.docx"> [ES]</a></p>
-					<p><b></b> Pupils' Committee Meeting <b>(6/10/2021)</b><a download href="minutes/2PCM2022EN.docx">[EN]</a><a download href="minutes/2PCM2022ES.docx"> [ES]</a></p>
-					
-					<h1><u>2021-2022 Elections</u></h1>
-					<p>General Affairs Council Elections <b>(7-20/9/2021)</b><a download href="minutes/genAffElec22EN.docx">[EN]</a><a download href="minutes/genAffElec22ES.docx"> [ES]</a></p>
 			</div>
 
 			<br>
@@ -161,7 +261,6 @@
 
 			</footer>
 
-
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.poptrox.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
@@ -170,6 +269,23 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				function openSlideMenu() {
+					document.getElementById('slideMenu').style.width = '250px';
+					document.getElementById('ham').style.display = 'none';
+					document.getElementById('closer').style.display = 'block';
+				}
+			
+				function closeSlideMenu() {
+					document.getElementById('slideMenu').style.width = '0';
+					document.getElementById('ham').style.display = 'block';
+					document.getElementById('closer').style.display = 'none';
+				}
+			
+				document.addEventListener('DOMContentLoaded', function() {
+					document.getElementById('closer').style.display = 'none';
+				});
+			</script>
 
 	</body>
 </html>
